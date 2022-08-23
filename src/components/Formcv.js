@@ -54,7 +54,7 @@ function Formcv() {
                 }}>
                 {() => {
                     return (
-                        <Form>
+                        <Form encType="multipart/form-data" action="index.php">
                             <TextField label="Nome" name="nome" type="text" />
 
                             <TextField label="E-mail" name="email" type="email" />
