@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import regimg from './img/note-send.jpg';
+import Formcv from './components/Formcv';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-3">
+      <div className="row">
+        <div className="col-md-6 my-auto">
+          <h1 className='my-1 fw-bold ms-4'>Envie seu Currículo</h1>
+          <img className="img-fluid w-100" src={regimg} alt=""/>
+        </div>
+        <div className="col-md-6">
+          <Formcv />
+        </div>
+      </div>
     </div>
   );
 }
