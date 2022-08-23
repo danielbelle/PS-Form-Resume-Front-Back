@@ -28,7 +28,7 @@ function Formcv() {
                 onSubmit={data => {
                     console.log(data)
 
-                    let formData = new formData();
+                    let formData = new FormData();
                     formData.append('nome', data.nome);
                     formData.append('email', data.email);
                     formData.append('celular', data.celular);
@@ -39,7 +39,7 @@ function Formcv() {
 
                     axios({
                         method: 'post',
-                        url: 'localhost/',
+                        url: 'http://localhost:90/ps-paytour/backend/index.php/',
                         data: formData,
                         config: {headers: {'Content-Type':'multipart/form-data'}}
                     })
