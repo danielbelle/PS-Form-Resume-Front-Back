@@ -8,7 +8,7 @@ function App() {
       <div className="row">
         <div className="col-md-6 my-auto">
           <h1 className='my-1 fw-bold ms-4'>Envie seu Currículo</h1>
-          <img className="img-fluid w-100" src={regimg} alt=""/>
+          <img className="img-fluid w-100" src={regimg} alt="" />
         </div>
         <div className="col-md-6">
           <Formcv />

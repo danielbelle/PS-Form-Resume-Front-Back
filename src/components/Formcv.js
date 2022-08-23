@@ -41,15 +41,15 @@ function Formcv() {
                         method: 'post',
                         url: 'http://localhost:90/ps-paytour/backend/index.php/',
                         data: formData,
-                        config: {headers: {'Content-Type':'multipart/form-data'}}
+                        config: { headers: { 'Content-Type': 'multipart/form-data' } }
                     })
-                    .then(function (response){
-                        console.log(response);
-                        alert('Formulário enviado!')
-                    })
-                    .catch(function (response){
-                        console.log(response)
-                    });
+                        .then(function (response) {
+                            console.log(response);
+                            alert('Formulário enviado!')
+                        })
+                        .catch(function (response) {
+                            console.log(response)
+                        });
 
                 }}>
                 {() => {

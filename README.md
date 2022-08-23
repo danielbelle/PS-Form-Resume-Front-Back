@@ -10,9 +10,13 @@ Yup - para validação de formulários:
 Axios - para conexão com db: 
 <quote>npm install axios</quote>
 
+Cors - para conexão e portas: 
+<quote>npm i cors</quote>
+
 Para iniciar o front end é só dar o comando:
 <quote>npm start</quote>
 
 
-<h1>Para o Back-end o composer adicionou a dependência:</h1>
+<h1>Para o Back-end não utilizei nenhuma dependência</h1>
+para mandar o e-mail 
 
