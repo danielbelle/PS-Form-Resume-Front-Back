@@ -31,4 +31,5 @@ Foi utilizado o padrão PSR-4, diferente do padrão solicitado PSR-2, que estava
 
 Os arquivos enviados para o banco de dados são salvos na pasta "./ps-paytour/backend/arquivos/".
 
+Selecione o e-mail e senha que você deseja ser o sender em: backend/app/Communication/email.php na parte do código: const USER e const PASS
 

@@ -43,8 +43,8 @@ function Formcv() {
                         config: { headers: { 'Content-Type': 'multipart/form-data' } }
                     })
                         .then(function (response) {
-                            //console.log(response);
-                            alert('Formulário enviado!')
+                            alert(response.data);
+                            //alert('Formulário enviado!')
                             //window.location.reload();
                         })
                         .catch(function (response) {

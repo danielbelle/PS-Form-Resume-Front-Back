@@ -23,7 +23,7 @@ class Conexao
 
         try {
             $this->con = new PDO($dsn, $this->user, $this->password);
-            echo "<script>alert('Conectado com sucesso ao {$this->database}.')</script>";
+            //echo "<script>alert('Conectado com sucesso ao {$this->database}.')</script>";
         } catch (PDOException $ex) {
             echo 'Erro: ' . $ex->getMessage();
         }
@@ -41,7 +41,7 @@ class Conexao
         try {
             $sql = $this->con->prepare($statements);
             $sql->execute();
-            echo "<script>alert('Envio aconteceu corretamente')</script>";
+            //echo "alert('Envio aconteceu corretamente')";
         } catch (PDOException $ex) {
             echo 'Erro: ' . $ex->getMessage();
         }
