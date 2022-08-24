@@ -14,7 +14,6 @@ function Formcv() {
         email: '',
         celular: '',
         cargo: '',
-        escolaridade: '',
         obs: '',
         arquivo: undefined
     }
@@ -24,7 +23,7 @@ function Formcv() {
         <>
             <Formik
                 initialValues={initialValues}
-                /*validationSchema={Validacao} */
+                validationSchema={Validacao}
                 onSubmit={data => {
                     console.log(data)
 
@@ -46,6 +45,7 @@ function Formcv() {
                         .then(function (response) {
                             console.log(response);
                             alert('Formulário enviado!')
+                            //window.location.reload();
                         })
                         .catch(function (response) {
                             console.log(response)

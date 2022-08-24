@@ -15,4 +15,6 @@ CREATE TABLE `dados_pessoas`(
 `ip` VARCHAR(20) 
 );
 
-DROP TABLE IF EXISTS dados_pessoas
+SELECT * FROM form_ps.dados_pessoas;
+
+DROP TABLE IF EXISTS dados_pessoas;

@@ -27,5 +27,5 @@ function sendEmail($nome, $email, $celular, $cargo, $escolaridade, $obs)
         "Reply-To" => $sender
     );
 
-    mail($destino, $assunto, $arquivo, $headers);
+    return mail($destino, $assunto, $arquivo, $headers);
 }
