@@ -18,7 +18,6 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 switch ($method) {
     case 'POST':
-
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $celular = $_POST["celular"];
@@ -35,22 +34,21 @@ switch ($method) {
 
 
 
-            if ($extensao == '.pdf' or $extensao == '.doc' or $extensao == 'docx' or $_FILES['arquivo']['size']<=1100000) {
-
-                
-
+            if ($extensao == '.pdf' or $extensao == '.doc' or $extensao == 'docx' or $_FILES['arquivo']['size'] <= 1100000) {
                 $arquivo = $_FILES['arquivo']['tmp_name'];
 
-                $conectarBd->Conectar('localhost', 'form_ps', 'root', '123456');
+                //Conecta database
+                $conectarBd->conectar('localhost', 'form_ps', 'root', '123456');
                 $extensao = '';
                 if (!$conectarBd) {
                     die("Falha na conexão: ");
                 }
-
-                $conectarBd->Gravar($nome, $email, $celular, $cargo, $escolaridade, $obs, $arquivo, $ip);
+                
+                //grava dados
+                $conectarBd->gravar($nome, $email, $celular, $cargo, $escolaridade, $obs, $arquivo, $ip);
 
                 move_uploaded_file($_FILES['arquivo']['tmp_name'], $pasta . $novoNomeArquivo);
-                
+
                 $address = $email;
                 $subject = "Seu CV foi recebido pela XYZ";
                 $body = "<html>
@@ -68,7 +66,7 @@ switch ($method) {
 
                 echo $sucesso ? 'Formulário enviado com sucesso!' : $obEmail->getError();
             } else {
-                echo('Formulário não enviado, verifique o tamanho do anexo ou a extensão');
+                echo ('Formulário não enviado, verifique o tamanho do anexo ou a extensão');
             }
         }
 

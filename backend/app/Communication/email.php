@@ -49,7 +49,6 @@ class Email
      * @param string|array $ccs
      * @param string|array $bccs
      * @return boolean
-     * 
      */
     public function sendEmail($addresses, $subject, $body, $attachments = [], $ccs = [], $bccs = [])
     {
@@ -59,9 +58,8 @@ class Email
         //Instancia PHPMailler
         $obMail = new PHPMailer(true);
         try {
-
             //Credenciais de acesso ao SMTP
-            $obMail->isSMTP(True);
+            $obMail->isSMTP(true);
             $obMail->Host = self::HOST;
             $obMail->SMTPAuth = true;
             $obMail->Username = self::USER;
@@ -71,7 +69,7 @@ class Email
             $obMail->Charset = self::CHARSET;
 
             //REMETENTE
-            $obMail->setFrom(Self::FROM_EMAIL, self::FROM_NAME);
+            $obMail->setFrom(self::FROM_EMAIL, self::FROM_NAME);
 
             //DESTINATÁRIOS
             $addresses = is_array($addresses) ? $addresses : [$addresses];

@@ -13,7 +13,7 @@ class Conexao
     private $password;
     private $con;
 
-    public function Conectar($host, $database, $user, $password)
+    public function conectar($host, $database, $user, $password)
     {
         $this->host = $host;
         $this->database = $database;
@@ -30,7 +30,7 @@ class Conexao
         return $this->con;
     }
 
-    public function Gravar($nome, $email, $celular, $cargo, $escolaridade, $obs, $arquivo, $ip)
+    public function gravar($nome, $email, $celular, $cargo, $escolaridade, $obs, $arquivo, $ip)
     {
 
         $statements = "INSERT INTO dados_pessoas (nome, email, celular, cargo, escolaridade, obs, arquivo, data_atual, ip) VALUES ('$nome', '$email', '$celular', '$cargo', '$escolaridade', '$obs', '$arquivo', NOW(), '$ip')";
@@ -45,6 +45,5 @@ class Conexao
         } catch (PDOException $ex) {
             echo 'Erro: ' . $ex->getMessage();
         }
-
     }
 }
