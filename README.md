@@ -25,11 +25,9 @@ Primeiramente precisamos iniciar o composer: composer install
 
 E posteriormente dar o comando de: composer dump
 
-O e-mail que vai enviar os dados do formulário é: phpmytraining404@gmail.com;
-
 Foi utilizado o padrão PSR-4, diferente do padrão solicitado PSR-2, que estava depreciado e por isso tive problemas com a utilização do composer.
 
 Os arquivos enviados para o banco de dados são salvos na pasta "./ps-paytour/backend/arquivos/".
 
-Selecione o e-mail e senha que você deseja ser o sender em: backend/app/Communication/email.php na parte do código: const USER e const PASS
+Selecione o e-mail e senha que você deseja ser o sender em: backend/app/Communication/email.php na parte do código: const USER e const PASS.
 
