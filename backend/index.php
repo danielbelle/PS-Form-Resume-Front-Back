@@ -1,7 +1,13 @@
 <?php
-header('Access-Control-Allow-Origin: *');
 
-require_once('services/Conexao.php');
+namespace App;
+
+require __DIR__ . '/vendor/autoload.php';
+
+use App\Communication\Email;
+use App\Conection\Conexao;
+
+header('Access-Control-Allow-Origin: *');
 
 $conectarBd = new Conexao();
 
@@ -12,7 +18,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 switch ($method) {
     case 'POST':
-        $conectarBd->Conectar('localhost','form_ps','root','123456');
+        $conectarBd->Conectar('localhost', 'form_ps', 'root', '123456');
         if (!$conectarBd) {
             die("Falha na conexão: ");
         }
@@ -37,8 +43,23 @@ switch ($method) {
 
         $conectarBd->Gravar($nome, $email, $celular, $cargo, $escolaridade, $obs, $arquivo, $ip);
 
-    break;
+
+        $address = $email;
+        $subject = "Seu CV foi recebido pela XYZ";
+        $body = "<html>
+                    <h1>Confirmando o envio do seu CV:</h1>
+                    <p><b>Nome:</b>$nome</p>
+                    <p><b>Email:</b>$email</p>
+                    <p><b>Telefone:</b>$celular</p>
+                    <p><b>Cargo Desejado:</b>$cargo</p>
+                    <p><b>Escolaridade:</b>$escolaridade</p>
+                    <p><b>Observação:</b>$obs</p>
+                </html>";
+
+        $obEmail = new Email;
+        $sucesso = $obEmail->sendEmail($address, $subject, $body);
+
+        echo $sucesso ? 'Mensagem enviada com sucesso!' : $obEmail->getError();
+
+        break;
 };
-
-
-?>
