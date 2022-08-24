@@ -25,7 +25,7 @@ function Formcv() {
                 initialValues={initialValues}
                 validationSchema={Validacao}
                 onSubmit={data => {
-                    console.log(data)
+                    //console.log(data)
 
                     let formData = new FormData();
                     formData.append('nome', data.nome);
@@ -43,7 +43,7 @@ function Formcv() {
                         config: { headers: { 'Content-Type': 'multipart/form-data' } }
                     })
                         .then(function (response) {
-                            console.log(response);
+                            //console.log(response);
                             alert('Formulário enviado!')
                             //window.location.reload();
                         })

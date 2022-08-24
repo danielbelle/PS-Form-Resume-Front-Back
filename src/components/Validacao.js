@@ -24,7 +24,7 @@ export const Validacao =
                 "fileSize",
                 "O arquivo tem mais de 1 MB",
                 (file) => {
-                    console.log("file: ", file);
+                    //console.log("file: ", file);
                     if (file) {
                         return file.size <= 1100000;
                     } else {
